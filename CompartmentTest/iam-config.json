@@ -1,5 +1,6 @@
 {
   "compartments_configuration": {
+    "enable_delete": true,
     "default_parent_id": "ocid1.compartment.oc1..aaaaaaaa5ytedzziwru2hccw4ws2fgv57cj44pkoxv2lix764pnmjfmgpnqq",
     "compartments": {
       "DATABASE": {
