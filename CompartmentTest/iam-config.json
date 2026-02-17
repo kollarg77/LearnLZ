@@ -7,7 +7,7 @@
       "children" : {
         "PROD" : {
           "name" : "database-production-cmp"
-          "description" = "Database production compartment"
+          "description" : "Database production compartment"
         }
       }
     }
