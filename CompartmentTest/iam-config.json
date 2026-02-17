@@ -1,15 +1,15 @@
-compartments_configuration = { 
-  default_parent_id = "ocid1.compartment.oc1..aaaaaaaa5ytedzziwru2hccw4ws2fgv57cj44pkoxv2lix764pnmjfmgpnqq"
-  compartments = {
-    DATABASE = { 
-      name = "database-cmp" 
-      description = "Database compartment"
-      children = {
-        PROD = {
-          name = "database-production-cmp"
-          description = "Database production compartment"
+"compartments_configuration" : {
+  "default_parent_id" : "ocid1.compartment.oc1..aaaaaaaa5ytedzziwru2hccw4ws2fgv57cj44pkoxv2lix764pnmjfmgpnqq"
+  "compartments" : {
+    "DATABASE" : {
+      "name" : "database-cmp"
+      "description" : "Database compartment"
+      "children" : {
+        "PROD" : {
+          "name" : "database-production-cmp"
+          "description" = "Database production compartment"
         }
-      }      
+      }
     }
   }
 }    
