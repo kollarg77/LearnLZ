@@ -1,0 +1,18 @@
+{
+  "compartments_configuration": {
+    "enable_delete": true,
+    "default_parent_id": "ocid1.compartment.oc1..aaaaaaaa5ytedzziwru2hccw4ws2fgv57cj44pkoxv2lix764pnmjfmgpnqq",
+    "compartments": {
+      "DATABASE": {
+        "name": "test1",
+        "description": "Database compartment",
+        "children": {
+          "PROD": {
+            "name": "test1-prod-db",
+            "description": "Database production compartment"
+          }
+        }
+      }
+    }
+  }
+}
