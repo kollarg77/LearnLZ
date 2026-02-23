@@ -6,7 +6,6 @@
       "CMP-PLATFORM-EXACC-KEY": {
         "name"                                       : "cmp-exacc",
         "description"                                : "ExaCC Prod Platform",
-        "parent_id"                                  : "CMP-LZ-PROD-PLATFORM-KEY",
 
         "children": {
           "CMP-PLATFORM-EXACC-DB-KEY": {
