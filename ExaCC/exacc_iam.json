@@ -8,12 +8,12 @@
         "description"                                : "ExaCC Prod Platform",
 
         "children": {
-          "CMP-PLATFORM-EXACC-DB-KEY": {
+          "CMP-PLATFORM-EXACC-VM-TEST-PROD": {
             "name"                               : "cmp-exacc-vmc-prod",
             "description"                        : "ExaCC Prod Platform, VM Cluster PROD"
           },
 
-          "CMP-PLATFORM-EXACC-INFRA-KEY": {
+          "CMP-PLATFORM-EXACC-VM-TEST-KEY": {
             "name"                               : "cmp-exacc-vmc-test",
             "description"                        : "ExaCC Prod Platform, VM Cluster TEST"
           }
@@ -44,6 +44,6 @@
         "name"                                       : "grp-exacc-db-admins-test",
         "description"                                : "TEST DB Team admin group"
       }
+    }
   }
-}
 }
