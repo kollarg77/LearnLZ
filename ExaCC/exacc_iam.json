@@ -66,6 +66,224 @@
         "name"                                       : "grp-exacc-db-admins-test",
         "description"                                : "Global Infra Team admin group"
       }
+  }
+},
+
+  "policies_configuration": {
+    "enable_cis_benchmark_checks"                        : "false",
+
+    "supplied_policies": {
+      "PCY-DB-ADMINISTRATION": {
+        "name"                                       : "pcy-db-administration",
+        "description"                                : "Example policy which allows the grp-db-admins group users to manage databases in all the environments and projects of the OE01.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-db-admins to use cloud-shell in tenancy",
+          "allow group grp-db-admins to read all-resources in compartment cmp-exacc",
+          "allow group grp-db-admins to use ons-family in compartment cmp-exacc",
+          "allow group grp-db-admins to manage alarms in compartment cmp-exacc",
+          "allow group grp-db-admins to manage metrics in compartment cmp-exacc",
+          "allow group grp-db-admins to manage orm-stacks in compartment cmp-exacc",
+          "allow group grp-db-admins to manage orm-jobs in compartment cmp-exacc",
+          "allow group grp-db-admins to manage orm-config-source-providers in compartment cmp-exacc",
+          "allow group grp-db-admins to read audit-events in compartment cmp-exacc",
+          "allow group grp-db-admins to read work-requests in compartment cmp-exacc",
+          "allow group grp-db-admins to manage data-safe-family in compartment cmp-exacc",
+          "allow group grp-db-admins to manage cloudevents-rules in compartment cmp-exacc",
+          "allow group grp-db-admins to use exadata-infrastructures in compartment cmp-exacc",
+          "allow group grp-db-admins to use vmclusters in compartment cmp-exacc",
+          "allow group grp-db-admins to use dbServers in compartment cmp-exacc",
+          "allow group grp-db-admins to manage autonomous-vmclusters in compartment cmp-exacc",
+          "allow group grp-db-admins to manage backup-destinations in compartment cmp-exacc",
+          "allow group grp-db-admins to manage backups in compartment cmp-exacc",
+          "allow group grp-db-admins to manage database-software-image in compartment cmp-exacc",
+          "allow group grp-db-admins to manage db-homes in compartment cmp-exacc",
+          "allow group grp-db-admins to manage databases in compartment cmp-exacc",
+          "allow group grp-db-admins to manage pluggable-databases in compartment cmp-exacc",
+          "allow group grp-db-admins to manage autonomous-databases in compartment cmp-exacc",
+          "allow group grp-db-admins to manage autonomous-backups in compartment cmp-exacc",
+          "allow group grp-db-admins to manage autonomous-vmclusters in compartment cmp-exacc",
+          "allow group grp-db-admins to manage autonomous-container-databases in compartment cmp-exacc"
+        ]
+      },
+
+      "PCY-INFRA-ADMINISTRATION": {
+        "name"                                       : "pcy-lzp-infra-administration",
+        "description"                                : "Example policy which allows the grp-infra-admins group users to manage the DB infra in all the environments and projects.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-infra-admins to use cloud-shell in tenancy",
+          "allow group grp-infra-admins to read all-resources in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage ons-family in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage alarms in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage metrics in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage orm-stacks in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage orm-jobs in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage orm-config-source-providers in compartment cmp-exacc",
+          "allow group grp-infra-admins to read audit-events in compartment cmp-exacc",
+          "allow group grp-infra-admins to read work-requests in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage cloudevents-rules in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage exadata-infrastructures in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage vmclusters in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage dbServers in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage dbnode-console-connection in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage dbnode-console-history in compartment cmp-exacc",
+          "allow group grp-infra-admins to manage autonomous-vmclusters in compartment cmp-exacc"
+        ]
+      },
+
+      "PCY-LZP-PLATFORM-EXACC-ADMINISTRATION": {
+        "name"                                       : "pcy-lzp-platform-exacc-administration",
+        "description"                                : "Policy which allows the groups grp-infra-admins and grp-db-admins to manage ExaCC resources in the Landing Zone Production Environment, shared ExaCC Platform compartment.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-infra-admins,grp-db-admins to use cloud-shell in tenancy",
+          "allow group grp-infra-admins,grp-db-admins to read all-resources in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc",
+          "allow group grp-infra-admins to use exadata-infrastructures in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-infra-admins to manage scheduling-policies in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-infra-admins to manage scheduling-windows in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-infra-admins to manage execution-windows in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to use exadata-infrastructures in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra where all{request.operation !='ValidateVmClusterNetwork',request.operation !='ActivateExadataInfrastructure',request.operation !='ChangeExadataInfrastructureCompartment',request.operation !='AddStorageCapacityExadataInfrastructure',request.operation !='CreateVmClusterNetwork',request.operation !='CreateVmClusterNetwork',request.operation !='UpdateVmClusterNetwork',request.operation !='DeleteVmClusterNetwork'}",
+          "allow group grp-infra-admins to manage vmclusters in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra where all{request.permission !='VM_CLUSTER_UPDATE_GI_SOFTWARE', request.permission !='VM_CLUSTER_UPDATE_EXADATA_STORAGE'}",
+          "allow group grp-infra-admins to use dbServers in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-infra-admins to manage dbnode-console-connection in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-infra-admins to manage dbnode-console-history in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to use vmclusters in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra where all{request.permission !='VM_CLUSTER_UPDATE_SSH_KEY', request.permission !='VM_CLUSTER_UPDATE_CPU',request.permission !='VM_CLUSTER_UPDATE_MEMORY',request.permission !='VM_CLUSTER_UPDATE_LOCAL_STORAGE',request.permission !='VM_CLUSTER_UPDATE_FILE_SYSTEM'}",
+          "allow group grp-infra-admins,grp-db-admins to manage alarms in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc",
+          "allow group grp-infra-admins,grp-db-admins to manage metrics in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc",
+          "allow group grp-infra-admins to manage orm-stacks in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage orm-stacks in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-db",
+          "allow group grp-infra-admins to manage orm-jobs in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage orm-jobs in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-db",
+          "allow group grp-infra-admins to manage orm-config-source-providers in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage orm-config-source-providers in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-db",
+          "allow group grp-infra-admins,grp-db-admins to read audit-events in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc",
+          "allow group grp-infra-admins,grp-db-admins to read work-requests in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc",
+          "allow group grp-infra-admins,grp-db-admins to manage cloudevents-rules in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc",
+          "allow group grp-infra-admins,grp-db-admins to manage db-nodes in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage backup-destinations in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-db",
+          "allow group grp-db-admins to manage backups in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage database-software-image in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-db",
+          "allow group grp-db-admins to manage db-homes in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage databases in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage pluggable-databases in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage autonomous-databases in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-db",
+          "allow group grp-db-admins to manage autonomous-backups in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-db",
+          "allow group grp-infra-admins,grp-db-admins to manage autonomous-vmclusters in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra",
+          "allow group grp-db-admins to manage autonomous-container-databases in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-db",
+          "allow group grp-lzp-security-admins to use ons-family in compartment cmp-exacc:cmp-lzp-security",
+          "allow group grp-lzp-prod-proj2-db-admins,grp-lzp-prod-proj2-infra-admins to use exadata-infrastructures in compartment cmp-exacc:cmp-lzp-platform:cmp-lzp-platform-exacc:cmp-lzp-platform-exacc-infra where all{request.operation !='CreateVmClusterNetwork',request.operation !='UpdateVmClusterNetwork',request.operation !='DeleteVmClusterNetwork',request.operation !='ValidateVmClusterNetwork'}"
+        ]
+      },
+
+      "PCY-LZP-PP-PROJ2-DB-ADMINISTRATION": {
+        "name"                                       : "pcy-lzp-pp-proj2-db-administration",
+        "description"                                : "Example policy which allows the grp-lzp-prepprod-proj2-db-admins group users to manage databases in the PREPROD/PROJECTS/PROJ2 database compartment, for regular VM-Clusters.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-lzp-preprod-proj2-db-admins to use cloud-shell in tenancy",
+          "allow group grp-lzp-preprod-proj2-db-admins to read all-resources in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage ons-family in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage alarms in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage metrics in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage orm-stacks in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage orm-jobs in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage orm-config-source-providers in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to read audit-events in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to read work-requests in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage bastion-session in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage data-safe-family in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage cloudevents-rules in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-infra-admins,grp-lzp-preprod-proj2-db-admins to use exadata-infrastructures in compartment cmp-exacc:cmp-lzp-platform where all{target.compartment.name = /*-platform-exacc-infra/,request.operation !='ValidateVmClusterNetwork',request.operation !='ActivateExadataInfrastructure',request.operation !='ChangeExadataInfrastructureCompartment',request.operation !='AddStorageCapacityExadataInfrastructure',request.operation !='CreateVmClusterNetwork',request.operation !='CreateVmClusterNetwork',request.operation !='UpdateVmClusterNetwork',request.operation !='DeleteVmClusterNetwork'}",
+          "allow group grp-lzp-preprod-proj2-infra-admins to manage vmclusters in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db where all{request.permission !='VM_CLUSTER_UPDATE_GI_SOFTWARE', request.permission !='VM_CLUSTER_UPDATE_EXADATA_STORAGE'}",
+          "allow group grp-lzp-preprod-proj2-db-admins to use vmclusters in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db where all{request.permission !='VM_CLUSTER_UPDATE_SSH_KEY', request.permission !='VM_CLUSTER_UPDATE_CPU',request.permission !='VM_CLUSTER_UPDATE_MEMORY',request.permission !='VM_CLUSTER_UPDATE_LOCAL_STORAGE',request.permission !='VM_CLUSTER_UPDATE_FILE_SYSTEM'}",
+          "allow group grp-lzp-preprod-proj2-infra-admins to use dbServers in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-infra-admins to manage dbnode-console-connection in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-infra-admins to manage dbnode-console-history in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage backup-destinations in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage backups in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage database-software-image in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage db-homes in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage databases in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage pluggable-databases in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage autonomous-databases in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-db-admins to manage autonomous-backups in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-infra-admins,grp-lzp-preprod-proj2-db-admins to manage autonomous-vmclusters in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db",
+          "allow group grp-lzp-preprod-proj2-infra-admins to manage autonomous-container-databases in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj2:cmp-lzp-pp-proj2-db"
+        ]
+      },
+
+      "PCY-LZP-PP-PROJ4-DB-ADMINISTRATION": {
+        "name"                                       : "pcy-lzp-pp-proj4-db-administration",
+        "description"                                : "Example policy which allows the grp-lzp-prepprod-proj4-db-admins group users to manage autonomous-databases in the PREPROD/PROJECTS/PROJ4 database compartment.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-lzp-preprod-proj4-db-admins to use cloud-shell in tenancy",
+          "allow group grp-lzp-preprod-proj4-db-admins to read all-resources in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage ons-family in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage alarms in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage metrics in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage orm-stacks in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage orm-jobs in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage orm-config-source-providers in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to read audit-events in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to read work-requests in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage data-safe-family in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage cloudevents-rules in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage autonomous-databases in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-db-admins to manage autonomous-backups in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj4:cmp-lzp-pp-proj4-db",
+          "allow group grp-lzp-preprod-proj4-infra-admins to use autonomous-container-databases in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-projects:cmp-lzp-pp-proj3:cmp-lzp-pp-proj3-db"
+        ]
+      },
+
+      "PCY-LZP-PREPROD-DB-ADMINISTRATION": {
+        "name"                                       : "pcy-lzp-preprod-db-administration",
+        "description"                                : "Example policy which allows the grp-lzp-preprod-db-admins group users to manage databases in all the projects of the pre-prod environment.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-lzp-preprod-db-admins to use cloud-shell in tenancy",
+          "allow group grp-lzp-preprod-db-admins to read all-resources in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to use ons-family in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage alarms in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage metrics in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage orm-stacks in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage orm-jobs in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage orm-config-source-providers in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to read audit-events in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to read work-requests in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage data-safe-family in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage cloudevents-rules in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-adminsto use exadata-infrastructures in compartment cmp-exacc:cmp-lzp-preprod:cmp-lzp-pp-platform where all{target.compartment.name = /*-platform-exacc-infra/,request.operation !='ValidateVmClusterNetwork',request.operation !='ActivateExadataInfrastructure',request.operation !='ChangeExadataInfrastructureCompartment',request.operation !='AddStorageCapacityExadataInfrastructure',request.operation !='CreateVmClusterNetwork',request.operation !='CreateVmClusterNetwork',request.operation !='UpdateVmClusterNetwork',request.operation !='DeleteVmClusterNetwork'}",
+          "allow group grp-lzp-preprod-db-admins to use vmclusters in compartment cmp-exacc:cmp-lzp-preprod where all{request.permission !='VM_CLUSTER_UPDATE_SSH_KEY', request.permission !='VM_CLUSTER_UPDATE_CPU',request.permission !='VM_CLUSTER_UPDATE_MEMORY',request.permission !='VM_CLUSTER_UPDATE_LOCAL_STORAGE',request.permission !='VM_CLUSTER_UPDATE_FILE_SYSTEM'}",
+          "allow group grp-lzp-preprod-db-admins to manage autonomous-vmclusters in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage backup-destinations in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage backups in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage database-software-image in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage db-homes in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage databases in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage pluggable-databases in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage autonomous-databases in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage autonomous-backups in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage autonomous-vmclusters in compartment cmp-exacc:cmp-lzp-preprod",
+          "allow group grp-lzp-preprod-db-admins to manage autonomous-container-databases in compartment cmp-exacc:cmp-lzp-preprod"
+        ]
+      },
+
+      "PCY-LZP-SECURITY-OPCTL-ADMINISTRATION": {
+        "name"                                       : "pcy-lzp-security-opctl-administration",
+        "description"                                : "Policy which allows grp-lzp-security-admins group users to manage Operator Access Control resources in the security compartment. Permissions extension.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-lzp-security-admins to manage operator-control-family in compartment cmp-exacc:cmp-lzp-security"
+        ]
+      }
     }
   }
 }
