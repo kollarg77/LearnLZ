@@ -37,34 +37,24 @@
   "groups_configuration": {
     "groups": {
 
-      "GRP-DB-ADMINS": {
-        "name"                                       : "grp-db-admins",
-        "description"                                : "Global DBA Team admin group"
+      "GRP-EXACC-DB-ADMINS": {
+        "name"                                       : "grp-exacc-db-admins",
+        "description"                                : "DBA Team admin group"
       },
 
       "GRP-INFRA-ADMINS": {
         "name"                                       : "grp-exacc-infra-admins",
-        "description"                                : "Global Infra Team admin group"
-      },
-
-      "GRP-PROD-INFRA-ADMINS": {
-        "name"                                       : "grp-exacc-infra-admins-prod",
-        "description"                                : "Global Infra Team admin group"
-      },
-
-      "GRP-TEST-INFRA-ADMINS": {
-        "name"                                       : "grp-exacc-infra-admins-test",
-        "description"                                : "Global Infra Team admin group"
+        "description"                                : "Infra Team admin group"
       },
 
       "GRP-PROD-DB-ADMINS": {
         "name"                                       : "grp-exacc-db-admins-prod",
-        "description"                                : "Global Infra Team admin group"
+        "description"                                : "PROD DB Team admin group"
       },
 
       "GRP-TEST-DB-ADMINS": {
         "name"                                       : "grp-exacc-db-admins-test",
-        "description"                                : "Global Infra Team admin group"
+        "description"                                : "TEST DB Team admin group"
       }
     }
   }
