@@ -9,25 +9,13 @@
 
         "children": {
           "CMP-PLATFORM-EXACC-DB-KEY": {
-            "name"                               : "cmp-exacc-db",
-            "description"                        : "ExaCC Prod Platform, DB Layer"
+            "name"                               : "cmp-exacc-vmc-prod",
+            "description"                        : "ExaCC Prod Platform, VM Cluster PROD"
           },
 
           "CMP-PLATFORM-EXACC-INFRA-KEY": {
-            "name"                               : "cmp-exacc-infra",
-            "description"                        : "ExaCC Prod Platform, Infra Layer",
-
-            "children": {
-              "CMP-PLATFORM-EXACC-VM-PROD-KEY": {
-                "name"                               : "cmp-exacc-vmc-prod",
-                "description"                        : "ExaCC Prod Platform, VM Cluster PROD"
-              },
-
-              "CMP-PLATFORM-EXACC-VM-TEST-KEY": {
-                "name"                               : "cmp-exacc-vmc-test",
-                "description"                        : "ExaCC Prod Platform, VM Cluster TEST"
-              }
-            }
+            "name"                               : "cmp-exacc-vmc-test",
+            "description"                        : "ExaCC Prod Platform, VM Cluster TEST"
           }
         }
       }
