@@ -94,7 +94,7 @@
 
         "statements": [
           "allow group grp-exacc-db-admins-prod to use cloud-shell in tenancy",
-          "allow group grp-exacc-db-admins-prod to read all-resources in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to read all-resources in compartment cmp-exacc",
           "allow group grp-exacc-db-admins-prod to use ons-family in compartment cmp-exacc:cmp-exacc-vmc-prod",
           "allow group grp-exacc-db-admins-prod to manage alarms in compartment cmp-exacc:cmp-exacc-vmc-prod",
           "allow group grp-exacc-db-admins-prod to manage metrics in compartment cmp-exacc:cmp-exacc-vmc-prod",
@@ -105,9 +105,9 @@
           "allow group grp-exacc-db-admins-prod to read work-requests in compartment cmp-exacc:cmp-exacc-vmc-prod",
           "allow group grp-exacc-db-admins-prod to manage data-safe-family in compartment cmp-exacc:cmp-exacc-vmc-prod",
           "allow group grp-exacc-db-admins-prod to manage cloudevents-rules in compartment cmp-exacc:cmp-exacc-vmc-prod",
-          "allow group grp-exacc-db-admins-prod to use exadata-infrastructures in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to use exadata-infrastructures in compartment cmp-exacc",
           "allow group grp-exacc-db-admins-prod to use vmclusters in compartment cmp-exacc:cmp-exacc-vmc-prod",
-          "allow group grp-exacc-db-admins-prod to use dbServers in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to use dbServers in compartment cmp-exacc",
           "allow group grp-exacc-db-admins-prod to manage autonomous-vmclusters in compartment cmp-exacc:cmp-exacc-vmc-prod",
           "allow group grp-exacc-db-admins-prod to manage backup-destinations in compartment cmp-exacc:cmp-exacc-vmc-prod",
           "allow group grp-exacc-db-admins-prod to manage backups in compartment cmp-exacc:cmp-exacc-vmc-prod",
@@ -129,7 +129,7 @@
 
         "statements": [
           "allow group grp-exacc-db-admins-test to use cloud-shell in tenancy",
-          "allow group grp-exacc-db-admins-test to read all-resources in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to read all-resources in compartment cmp-exacc",
           "allow group grp-exacc-db-admins-test to use ons-family in compartment cmp-exacc:cmp-exacc-vmc-test",
           "allow group grp-exacc-db-admins-test to manage alarms in compartment cmp-exacc:cmp-exacc-vmc-test",
           "allow group grp-exacc-db-admins-test to manage metrics in compartment cmp-exacc:cmp-exacc-vmc-test",
@@ -140,9 +140,9 @@
           "allow group grp-exacc-db-admins-test to read work-requests in compartment cmp-exacc:cmp-exacc-vmc-test",
           "allow group grp-exacc-db-admins-test to manage data-safe-family in compartment cmp-exacc:cmp-exacc-vmc-test",
           "allow group grp-exacc-db-admins-test to manage cloudevents-rules in compartment cmp-exacc:cmp-exacc-vmc-test",
-          "allow group grp-exacc-db-admins-test to use exadata-infrastructures in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to use exadata-infrastructures in compartment cmp-exacc",
           "allow group grp-exacc-db-admins-test to use vmclusters in compartment cmp-exacc:cmp-exacc-vmc-test",
-          "allow group grp-exacc-db-admins-test to use dbServers in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to use dbServers in compartment cmp-exacc",
           "allow group grp-exacc-db-admins-test to manage autonomous-vmclusters in compartment cmp-exacc:cmp-exacc-vmc-test",
           "allow group grp-exacc-db-admins-test to manage backup-destinations in compartment cmp-exacc:cmp-exacc-vmc-test",
           "allow group grp-exacc-db-admins-test to manage backups in compartment cmp-exacc:cmp-exacc-vmc-test",
