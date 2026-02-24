@@ -1,0 +1,190 @@
+{
+  "compartments_configuration": {
+    "enable_delete"                                      : "true",
+
+    "compartments": {
+      "CMP-PLATFORM-EXACC-KEY": {
+        "name"                                       : "cmp-exacc",
+        "description"                                : "ExaCC Prod Platform",
+
+        "children": {
+          "CMP-PLATFORM-EXACC-VM-PROD-KEY": {
+            "name"                               : "cmp-exacc-vmc-prod",
+            "description"                        : "ExaCC Prod Platform, VM Cluster PROD"
+          },
+
+          "CMP-PLATFORM-EXACC-VM-TEST-KEY": {
+            "name"                               : "cmp-exacc-vmc-test",
+            "description"                        : "EExaCC Prod Platform, VM Cluster TEST"
+            }
+          }
+        }
+      }
+  },
+
+  "groups_configuration": {
+    "groups": {
+
+      "GRP-EXACC-DB-ADMINS": {
+        "name"                                       : "grp-exacc-db-admins",
+        "description"                                : "DBA Team admin group"
+      },
+
+      "GRP-INFRA-ADMINS": {
+        "name"                                       : "grp-exacc-infra-admins",
+        "description"                                : "Infra Team admin group"
+      },
+
+      "GRP-PROD-DB-ADMINS": {
+        "name"                                       : "grp-exacc-db-admins-prod",
+        "description"                                : "PROD DB Team admin group"
+      },
+
+      "GRP-TEST-DB-ADMINS": {
+        "name"                                       : "grp-exacc-db-admins-test",
+        "description"                                : "TEST DB Team admin group"
+      }
+    }
+  },
+
+  "policies_configuration": {
+    "enable_cis_benchmark_checks"                        : "false",
+
+    "supplied_policies": {
+      "PCY-DB-ADMINISTRATION": {
+        "name"                                       : "pcy-exacc-db-admin",
+        "description"                                : "Policy which allows the grp-exacc-db-admins group users to manage databases in all the environments and projects of the OE01.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-exacc-db-admins to use cloud-shell in tenancy",
+          "allow group grp-exacc-db-admins to read all-resources in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to use ons-family in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage alarms in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage metrics in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage orm-stacks in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage orm-jobs in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage orm-config-source-providers in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to read audit-events in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to read work-requests in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage data-safe-family in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage cloudevents-rules in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to use exadata-infrastructures in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to use vmclusters in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to use dbServers in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage db-nodes in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage autonomous-vmclusters in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage backup-destinations in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage backups in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage database-software-image in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage db-homes in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage databases in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage pluggable-databases in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage autonomous-databases in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage autonomous-backups in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage autonomous-vmclusters in compartment cmp-exacc",
+          "allow group grp-exacc-db-admins to manage autonomous-container-databases in compartment cmp-exacc"
+        ]
+      },
+
+      "PCY-PROD-DB-ADMINISTRATION": {
+        "name"                                       : "pcy-exacc-db-admin-prod",
+        "description"                                : "Policy which allows the grp-exacc-db-admins-prod group users to manage databases in all the projects of the pre-prod environment.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-exacc-db-admins-prod to use cloud-shell in tenancy",
+          "allow group grp-exacc-db-admins-prod to read all-resources in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to use ons-family in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage alarms in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage metrics in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage orm-stacks in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage orm-jobs in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage orm-config-source-providers in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to read audit-events in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to read work-requests in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage data-safe-family in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage cloudevents-rules in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to use exadata-infrastructures in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to use vmclusters in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to use dbServers in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage autonomous-vmclusters in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage backup-destinations in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage backups in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage database-software-image in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage db-homes in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage databases in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage pluggable-databases in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage autonomous-databases in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage autonomous-backups in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage autonomous-vmclusters in compartment cmp-exacc:cmp-exacc-vmc-prod",
+          "allow group grp-exacc-db-admins-prod to manage autonomous-container-databases in compartment cmp-exacc:cmp-exacc-vmc-prod"
+        ]
+      },
+
+      "PCY-TEST-DB-ADMINISTRATION": {
+        "name"                                       : "pcy-exacc-db-admin-test",
+        "description"                                : "Policy which allows the grp-exacc-db-admins-test group users to manage databases in all the projects of the pre-prod environment.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-exacc-db-admins-test to use cloud-shell in tenancy",
+          "allow group grp-exacc-db-admins-test to read all-resources in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to use ons-family in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage alarms in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage metrics in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage orm-stacks in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage orm-jobs in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage orm-config-source-providers in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to read audit-events in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to read work-requests in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage data-safe-family in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage cloudevents-rules in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to use exadata-infrastructures in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to use vmclusters in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to use dbServers in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage autonomous-vmclusters in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage backup-destinations in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage backups in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage database-software-image in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage db-homes in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage databases in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage pluggable-databases in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage autonomous-databases in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage autonomous-backups in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage autonomous-vmclusters in compartment cmp-exacc:cmp-exacc-vmc-test",
+          "allow group grp-exacc-db-admins-test to manage autonomous-container-databases in compartment cmp-exacc:cmp-exacc-vmc-test"
+        ]
+      },
+
+      "PCY-PLATFORM-EXACC-ADMIN": {
+        "name"                                       : "pcy-platform-exacc-admin",
+        "description"                                : "Policy which allows the groups grp-exacc-infra-admins to manage ExaCC resources in the Landing Zone Production Environment, shared ExaCC Platform compartment.",
+        "compartment_id"                             : "TENANCY-ROOT",
+
+        "statements": [
+          "allow group grp-exacc-infra-admins to use cloud-shell in tenancy",
+          "allow group grp-exacc-infra-admins to read all-resources in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage exadata-infrastructures in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage scheduling-policies in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage scheduling-windows in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage execution-windows in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage vmclusters in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage dbServers in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage db-nodes in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage dbnode-console-connection in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage dbnode-console-history in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage alarms in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage metrics in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage orm-stacks in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage orm-jobs in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage orm-config-source-providers in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to read audit-events in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to read work-requests in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage cloudevents-rules in compartment cmp-exacc",
+          "allow group grp-exacc-infra-admins to manage autonomous-vmclusters in compartment cmp-exacc"
+        ]
+      }
+    }
+  }
+}
